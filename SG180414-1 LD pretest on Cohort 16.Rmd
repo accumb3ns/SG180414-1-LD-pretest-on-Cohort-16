@@ -1,0 +1,18 @@
+---
+title: "SG180414-1 LD pretest on Cohort 16"
+output: html_notebook
+---
+
+
+```{r}
+library(data.table)
+
+path <- "./SG180414-1 LD pretest on Cohort 16/Reduced/"
+horizontal <- fread(paste0(path, "SG180413-1 Cohort 16 LD pretest (horizontal map).csv"))
+vertical <- fread(paste0(path, "/SG180413-1 Cohort 16 LD pretest (vertical map).csv"))
+
+identical(horizontal,vertical)
+
+
+```
+
