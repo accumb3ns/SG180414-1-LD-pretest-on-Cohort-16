@@ -6,6 +6,7 @@ output: html_notebook
 
 ```{r}
 library(data.table)
+library(dplyr)
 
 path <- "./SG180414-1 LD pretest on Cohort 16/Reduced/"
 horizontal <- fread(paste0(path, "SG180413-1 Cohort 16 LD pretest (horizontal map).csv"))
@@ -13,6 +14,10 @@ vertical <- fread(paste0(path, "/SG180413-1 Cohort 16 LD pretest (vertical map).
 
 identical(horizontal,vertical)
 
+boxes10and11 <- horizontal %>% filter(Encl == "10" | Encl == "11")
 
+colnames(boxes10and11)
+
+hist(boxes10and11[,27])
 ```
 
