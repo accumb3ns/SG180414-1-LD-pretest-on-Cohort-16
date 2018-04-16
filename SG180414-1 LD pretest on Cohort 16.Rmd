@@ -15,7 +15,6 @@ vertical <- fread(paste0(path, "/SG180413-1 Cohort 16 LD pretest (vertical map).
 lightside_horizontal <- fread(paste0(path, "/SG180413-1 Light Chamber Definition (horizontal map).csv"))
 lightside_vertical <- fread(paste0(path, "/SG180413-1 Light Chamber Definition (vertical map).csv"))
 
-identical(horizontal,vertical)
 colnames(horizontal)
 
 lightside_horizontal_10_11 <- lightside_horizontal %>% select(ends_with("<TotTime(sec)>"))
@@ -31,8 +30,6 @@ allboxes <- rbind (box5, boxes10and11)
 hist(allboxes[,"Zone 2<TotTime(sec)>"], main = "Light/Dark Pre-Test Histogram", xlab = "Time spent in light chamber (s)", ylab = "Number of animals")
 
 shapiro.test(allboxes[,"Zone 2<TotTime(sec)>"])
-
-
 ```
 
 
